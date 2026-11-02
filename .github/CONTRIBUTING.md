@@ -10,6 +10,10 @@ The easiest contribution: write an `APP.md` for an app or a `SITE.md` for a webs
 
 Mika can get things done just by looking at the screen; for apps and websites with usage knowledge (where things are, common ways to do things, what to watch out for), it looks the knowledge up when needed and takes fewer wrong turns. The current list is in the collapsed section under "What it can do" in the [README](../README.md).
 
+## Contributing translations
+
+Use the [standalone translation tools](../tools/i18n/README.md) to export a CSV with English, Simplified Chinese, Traditional Chinese and the other current translations, including source files and comments. Edit the Android XML resources and run `python tools/i18n/translations.py check` to find missing or extra keys without installing the Android SDK. The existing `StringResourcesTest` also checks placeholders and language-specific plural rules.
+
 ## Reporting issues
 
 When opening an issue, please include your **phone model, Android version and Mika version** ("About Mika" (关于 Mika) in Settings), what you did, what you expected and what actually happened. Screenshots from "View steps" (查看过程) help a lot (hide anything private first). In the app, About › Send feedback can copy diagnostics for you to paste into the issue; results from Settings › Recovery & repair › Compatibility self-check can be filed as a [device report](https://github.com/wangzan101/Mika/issues/new?template=device-report.yml).

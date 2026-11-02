@@ -1,0 +1,32 @@
+name: Translation resources
+
+on:
+  pull_request:
+    paths:
+      - 'app/src/main/res/**/strings*.xml'
+      - 'tools/i18n/**'
+      - '.github/workflows/translations.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'app/src/main/res/**/strings*.xml'
+      - 'tools/i18n/**'
+      - '.github/workflows/translations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m unittest discover -s tools/i18n -v
+      - run: python tools/i18n/translations.py check

@@ -10,6 +10,10 @@
 
 没有任何说明，Mika 也能看着屏幕把事办成；写了使用知识（入口在哪、常见做法、要注意什么）的 App 和网站，Mika 用到时自动查阅，少走弯路。现有清单见 [README](../docs/readme/README.zh-CN.md) 里「能做什么」下面的折叠段。
 
+## 参与翻译
+
+用[独立翻译工具](../tools/i18n/README.md)导出英文、简体、繁体及其他现有语言的 CSV 对照表，表中带来源文件和注释。修改 Android XML 资源后，运行 `python tools/i18n/translations.py check` 查看缺失或多余的 key，不用安装 Android SDK。占位符和各语言的复数规则仍由现有 `StringResourcesTest` 检查。
+
 ## 报告问题
 
 开 Issue 时请写上：**手机型号、安卓版本、Mika 版本**（设置里的「关于 Mika」），做了什么、期望什么、实际发生了什么。能附上「查看过程」里的截图更好（注意先遮掉隐私）。App 里「关于 › 反馈问题」可以复制诊断信息贴进 Issue；设置 › 恢复与修复 › 兼容性自检的结果可以用[设备报告](https://github.com/wangzan101/Mika/issues/new?template=device-report.yml)提交。
